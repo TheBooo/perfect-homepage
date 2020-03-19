@@ -1,32 +1,10 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
+/*
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
+*/
 
 @keyframes App-logo-spin {
   from {
@@ -34,5 +12,131 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+:root {
+  --main-bg-color: #002b36;
+  --main-darker: #00202b;
+  --main-lighter: #003745;
+  --main-lightest: #3698b7;
+  --main-text: #b4cdd8;
+  --main-transition: all 0.3s ease-in-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Helvetica, sans-serif !important;
+  background-color: var(--main-bg-color);
+}
+
+h1 {
+  font-size: 3rem;
+  color: var(--main-text);
+  text-align: center;
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+  letter-spacing: 0.3rem;
+}
+
+.btn {
+  padding: 0.2rem;
+  font-size: 1.4rem;
+  background-color: var(--main-lightest);
+  color: var(--main-darker);
+  border: none;
+  width: 3rem;
+  transition: var(--main-transition);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn:hover {
+  cursor: pointer;
+  color: var(--main-lightest);
+  background-color: var(--main-darker);
+}
+
+.logotype {
+  max-height: 30vh;
+  width: auto;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
+.submit-btn {
+  padding-top: auto;
+  border: 1px solid var(--main-darker);
+  border-left: none;
+  border-bottom-right-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+.row {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.form {
+  max-width: 90vw;
+  min-height: 3rem;
+  display: flex;
+  justify-content: center;
+  border: 0.2rem solid var(--main-darker);
+  border-radius: 2rem;
+  z-index: 2;
+  margin-left: 48px;
+}
+
+.search {
+  font-size: 1rem;
+  min-width: 30vw;
+  font-family: Helvetica, sans-serif !important;
+  width: 20rem;
+  padding: 0.1rem;
+  border: 1px solid var(--main-darker);
+  border-right: none;
+  border-bottom-left-radius: 1.5rem;
+  border-top-left-radius: 1.5rem;
+  background: var(--main-text);
+  padding-inline-start: 20px;
+}
+.search::placeholder {
+  color: var(--main-darker);
+}
+.search:focus {
+  outline: none;
+}
+.duckduckgo-logo {
+  width: 48px;
+  height: 48px;
+  color: white;
+  opacity: 0;
+  transition: var(--main-transition);
+  animation: App-logo-spin infinite 10s linear;
+  position: relative;
+  z-index: 1;
+}
+
+form:hover + .duckduckgo-logo {
+  opacity: 0.7;
+}
+
+@media (max-width: 767px) {
+  .duckduckgo-logo {
+    display: none;
+  }
+  .form {
+    margin-left: 0px;
   }
 }
