@@ -1,25 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import SearchForm from "./components/SearchForm";
+import Weather from "./components/Weather";
+import Logo from "./components/Logo";
+import Links from "./components/Links";
+import LinkForm from "./components/LinkForm";
+import { v4 as uuidv4 } from "uuid";
+
+const initialLinks = [
+  { id: uuidv4(), link: "www.google.com", name: "Google" },
+  { id: uuidv4(), link: "yandex.ru", name: "Yandex" },
+  { id: uuidv4(), link: "https://bikepost.ru/", name: "Bikepost" },
+  {
+    id: uuidv4(),
+    link: "https://hh.ru/",
+    name: "HeadHunter"
+  }
+];
 
 function App() {
+  const [links, setLinks] = useState(initialLinks);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Logo />
+      <SearchForm />
+      <Weather />
+      <Links links={links} />
+      <LinkForm />
+    </>
   );
 }
 
