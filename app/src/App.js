@@ -36,9 +36,13 @@ function App() {
   };
   const handleSubmit = e => {
     e.preventDefault();
-    const singleLink = { id: uuidv4(), link: url, name };
-    setLinks([...links, singleLink]);
-    setLinksForm({ show: false });
+    if (url && name) {
+      const singleLink = { id: uuidv4(), link: url, name };
+      setLinks([...links, singleLink]);
+      setLinksForm({ show: false });
+    } else {
+      alert("Please enter URL and Name!");
+    }
   };
   const handleClose = e => {
     e.preventDefault();
