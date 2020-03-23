@@ -6,7 +6,6 @@ const SingleLink = ({ singleLink }) => {
   if (!pattern.test(link)) {
     link = "http://" + link;
   }
-  console.log(link);
 
   return (
     <a href={link} className="single-link">
