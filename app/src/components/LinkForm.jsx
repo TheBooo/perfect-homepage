@@ -6,9 +6,12 @@ const LinkForm = () => {
     <div className="container">
       <div className="row">
         <form className="link-form">
-          <button className="btn btn-danger">
-            <MdClose />
-          </button>
+          <div className="row row-end">
+            <button className="btn btn-danger">
+              <MdClose />
+            </button>
+          </div>
+
           <input
             type="text"
             name="url"
@@ -23,9 +26,11 @@ const LinkForm = () => {
             placeholder="   Name"
             autoComplete="off"
           />
-          <button type="submit" className="btn">
-            <MdDone />
-          </button>
+          <div className="row row-end">
+            <button type="submit" className="btn">
+              <MdDone />
+            </button>
+          </div>
         </form>
       </div>
     </div>

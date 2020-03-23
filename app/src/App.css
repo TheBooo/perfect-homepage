@@ -89,6 +89,10 @@ h1 {
   justify-content: center;
   align-content: center;
 }
+.row-end {
+  width: 100%;
+  justify-content: flex-end !important;
+}
 .form {
   max-width: 90vw;
   min-height: 3rem;
@@ -156,7 +160,10 @@ form:hover + .duckduckgo-logo {
 }
 @media (max-width: 1023px) {
   .links-container {
-    width: 90vw;
+    width: 90vw !important;
+  }
+  .link-form {
+    width: 80vw !important;
   }
 }
 
@@ -193,6 +200,7 @@ form:hover + .duckduckgo-logo {
   border-radius: 2rem;
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   background-color: var(--main-darker);
 }
 .link-input {
