@@ -54,11 +54,21 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 1.5rem;
 }
 .btn:hover {
   cursor: pointer;
   color: var(--main-lightest);
   background-color: var(--main-darker);
+}
+.submit-btn {
+  border: 1px solid var(--main-darker);
+  border-radius: 0rem;
+  border-bottom-right-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+}
+.btn-danger {
+  background-color: darkred;
 }
 
 .logotype {
@@ -66,14 +76,6 @@ h1 {
   width: auto;
   margin-top: 4rem;
   margin-bottom: 2rem;
-}
-
-.submit-btn {
-  padding-top: auto;
-  border: 1px solid var(--main-darker);
-  border-left: none;
-  border-bottom-right-radius: 1.5rem;
-  border-top-right-radius: 1.5rem;
 }
 
 .container {
@@ -183,4 +185,27 @@ form:hover + .duckduckgo-logo {
   height: 24px;
   display: block;
   margin: 0.3rem;
+}
+
+.link-form {
+  width: 40vw;
+  padding: 2rem;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--main-darker);
+}
+.link-input {
+  background-color: var(--main-text);
+  border: 0.4rem solid var(--main-lighter);
+  border-radius: 2rem;
+  font-size: 1.4rem;
+  margin: 0.5rem 0 0.5rem 0;
+  width: 100%;
+}
+.link-input::placeholder {
+  color: var(--main-darker);
+}
+.link-input:focus {
+  outline: none;
 }

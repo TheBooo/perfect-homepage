@@ -1,26 +1,33 @@
 import React from "react";
+import { MdDone, MdClose } from "react-icons/md";
 
 const LinkForm = () => {
   return (
     <div className="container">
-      <form className="form">
-        <button className="btn">Cancel</button>
-        <input
-          type="text"
-          name="link"
-          className="search"
-          placeholder="link goes here"
-        />
-        <input
-          type="text"
-          name="name"
-          className="search "
-          placeholder="name goes here"
-        />
-        <button type="submit" className="btn">
-          Add
-        </button>
-      </form>
+      <div className="row">
+        <form className="link-form">
+          <button className="btn btn-danger">
+            <MdClose />
+          </button>
+          <input
+            type="text"
+            name="url"
+            className="link-input"
+            placeholder="   URL"
+            autoComplete="off"
+          />
+          <input
+            type="text"
+            name="name"
+            className="link-input "
+            placeholder="   Name"
+            autoComplete="off"
+          />
+          <button type="submit" className="btn">
+            <MdDone />
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
