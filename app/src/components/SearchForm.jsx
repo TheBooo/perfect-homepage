@@ -5,7 +5,6 @@ import { MdSearch } from "react-icons/md";
 const SearchForm = () => {
   return (
     <div className="container">
-      <div className="row"></div>
       <div className="row form-row">
         <form className="form" action="https://duckduckgo.com/">
           <input
