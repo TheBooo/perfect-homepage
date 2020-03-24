@@ -42,7 +42,12 @@ h1 {
   margin-bottom: 5rem;
   letter-spacing: 0.3rem;
 }
-
+button {
+  border: none;
+  outline: none;
+  font-family: Helvetica, sans-serif !important;
+  font-size: 1rem;
+}
 .btn {
   padding: 0.2rem;
   font-size: 1.4rem;
@@ -168,7 +173,7 @@ form:hover + .duckduckgo-logo {
 }
 
 .single-link {
-  width: 100px;
+  width: 7rem;
   margin: 1rem;
   padding: 0.7rem;
   border-radius: 2rem;
@@ -211,9 +216,7 @@ form:hover + .duckduckgo-logo {
   margin: 0.5rem 0 0.5rem 0;
   width: 100%;
 }
-.link-input::placeholder {
-  color: var(--main-darker);
-}
+
 .link-input:focus {
   outline: none;
 }

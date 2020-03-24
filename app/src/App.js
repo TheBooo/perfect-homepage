@@ -20,14 +20,49 @@ const initialLinks = [
 
 function App() {
   const [links, setLinks] = useState(initialLinks);
+  const [url, setUrl] = useState("");
+  const [name, setName] = useState("");
+  const [linksForm, setLinksForm] = useState({ show: false });
+  const handleShowForm = () => {
+    setLinksForm({ show: true });
+  };
+  //get input link URL
+  const handleUrl = e => {
+    setUrl(e.target.value);
+  };
+  //get input link name
+  const handleName = e => {
+    setName(e.target.value);
+  };
+  const handleSubmit = e => {
+    e.preventDefault();
+    if (url && name) {
+      const singleLink = { id: uuidv4(), link: url, name };
+      setLinks([...links, singleLink]);
+      setLinksForm({ show: false });
+    } else {
+      alert("Please enter URL and Name!");
+    }
+  };
+  const handleClose = e => {
+    e.preventDefault();
+    setLinksForm({ show: false });
+  };
 
   return (
     <>
       <Logo />
       <SearchForm />
       <Weather />
-      <Links links={links} />
-      <LinkForm />
+      <Links links={links} onShowForm={handleShowForm} />
+      {linksForm.show && (
+        <LinkForm
+          onHandleSubmit={handleSubmit}
+          onHandleUrl={handleUrl}
+          onHandleName={handleName}
+          onHandleClose={handleClose}
+        />
+      )}
     </>
   );
 }
