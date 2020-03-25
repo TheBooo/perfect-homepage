@@ -186,6 +186,7 @@ form:hover + .duckduckgo-logo {
   flex-direction: column;
   text-decoration: none;
   transition: var(--main-transition);
+  z-index: 2;
 }
 .single-link:hover {
   cursor: pointer;
@@ -216,7 +217,27 @@ form:hover + .duckduckgo-logo {
   margin: 0.5rem 0 0.5rem 0;
   width: 100%;
 }
-
 .link-input:focus {
   outline: none;
+}
+
+.add-link {
+  height: 74px;
+}
+
+.link-edit {
+  position: relative;
+  display: flex;
+  bottom: 5.5rem;
+  justify-content: space-around;
+  font-size: 1rem;
+  color: var(--main-lightest);
+  opacity: 0.4;
+  z-index: 4;
+  cursor: pointer;
+  transition: var(--main-transition);
+}
+.link-edit:hover {
+  opacity: 1;
+  color: var(--main-text);
 }

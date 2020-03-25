@@ -23,9 +23,11 @@ function App() {
   const [url, setUrl] = useState("");
   const [name, setName] = useState("");
   const [linksForm, setLinksForm] = useState({ show: false });
+
   const handleShowForm = () => {
     setLinksForm({ show: true });
   };
+
   //get input link URL
   const handleUrl = e => {
     setUrl(e.target.value);
@@ -49,12 +51,22 @@ function App() {
     setLinksForm({ show: false });
   };
 
+  // DELETE LINK
+  const handleDelete = id => {
+    let newLinks = links.filter(link => link.id !== id);
+    setLinks(newLinks);
+  };
+
   return (
     <>
       <Logo />
       <SearchForm />
       <Weather />
-      <Links links={links} onShowForm={handleShowForm} />
+      <Links
+        links={links}
+        onShowForm={handleShowForm}
+        onHandleDelete={handleDelete}
+      />
       {linksForm.show && (
         <LinkForm
           onHandleSubmit={handleSubmit}
