@@ -231,13 +231,13 @@ form:hover + .duckduckgo-logo {
   bottom: 5.5rem;
   justify-content: space-around;
   font-size: 1rem;
-  color: var(--main-lightest);
-  opacity: 0.4;
+  color: var(--main-lighter);
+  opacity: 1;
   z-index: 4;
   cursor: pointer;
   transition: var(--main-transition);
 }
-.link-edit:hover {
-  opacity: 1;
+
+.icon:hover {
   color: var(--main-text);
 }

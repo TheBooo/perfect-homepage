@@ -2,7 +2,7 @@ import React from "react";
 import SingleLink from "./SingleLink";
 import { MdAdd } from "react-icons/md";
 
-const Links = ({ links, onShowForm, onHandleDelete }) => {
+const Links = ({ links, onShowForm, onHandleDelete, onHandleEdit }) => {
   return (
     <div className="links-container">
       {links.map(link => {
@@ -11,6 +11,7 @@ const Links = ({ links, onShowForm, onHandleDelete }) => {
             key={link.id}
             singleLink={link}
             onDelete={onHandleDelete}
+            onEdit={onHandleEdit}
           />
         );
       })}
