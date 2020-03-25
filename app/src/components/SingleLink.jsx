@@ -9,7 +9,11 @@ const SingleLink = ({ singleLink }) => {
 
   return (
     <a href={link} className="single-link">
-      <img className="link-icon" src={link + "/favicon.ico"} alt="" />
+      <img
+        src={"https://s2.googleusercontent.com/s2/favicons?domain_url=" + link}
+        alt=""
+        className="link-icon"
+      />
       <div>{name}</div>
     </a>
   );
