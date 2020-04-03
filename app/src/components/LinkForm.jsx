@@ -1,13 +1,24 @@
 import React from "react";
 import { MdDone, MdClose } from "react-icons/md";
 
-const LinkForm = () => {
+const LinkForm = ({
+  onHandleSubmit,
+  onHandleUrl,
+  onHandleName,
+  onHandleClose,
+  url,
+  name
+}) => {
   return (
     <div className="container">
       <div className="row">
-        <form className="link-form">
+        <form className="link-form" onSubmit={onHandleSubmit}>
           <div className="row row-end">
-            <button className="btn btn-danger">
+            <button
+              type="button"
+              className="btn btn-danger"
+              onClick={onHandleClose}
+            >
               <MdClose />
             </button>
           </div>
@@ -18,6 +29,8 @@ const LinkForm = () => {
             className="link-input"
             placeholder="   URL"
             autoComplete="off"
+            value={url}
+            onChange={onHandleUrl}
           />
           <input
             type="text"
@@ -25,6 +38,8 @@ const LinkForm = () => {
             className="link-input "
             placeholder="   Name"
             autoComplete="off"
+            value={name}
+            onChange={onHandleName}
           />
           <div className="row row-end">
             <button type="submit" className="btn">
