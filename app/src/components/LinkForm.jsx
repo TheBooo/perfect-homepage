@@ -5,24 +5,31 @@ const LinkForm = ({
   onHandleSubmit,
   onHandleUrl,
   onHandleName,
-  onHandleClose
+  onHandleClose,
+  url,
+  name
 }) => {
   return (
     <div className="container">
       <div className="row">
-        <form className="link-form">
+        <form className="link-form" onSubmit={onHandleSubmit}>
           <div className="row row-end">
-            <button className="btn btn-danger" onClick={onHandleClose}>
+            <button
+              type="button"
+              className="btn btn-danger"
+              onClick={onHandleClose}
+            >
               <MdClose />
             </button>
           </div>
 
           <input
-            type="url"
+            type="text"
             name="url"
             className="link-input"
             placeholder="   URL"
             autoComplete="off"
+            value={url}
             onChange={onHandleUrl}
           />
           <input
@@ -31,10 +38,11 @@ const LinkForm = ({
             className="link-input "
             placeholder="   Name"
             autoComplete="off"
+            value={name}
             onChange={onHandleName}
           />
           <div className="row row-end">
-            <button type="submit" className="btn" onClick={onHandleSubmit}>
+            <button type="submit" className="btn">
               <MdDone />
             </button>
           </div>
