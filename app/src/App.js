@@ -25,7 +25,41 @@ function App() {
   const [linksForm, setLinksForm] = useState({ show: false });
   const [edit, setEdit] = useState(false);
   const [id, setId] = useState(0);
+  const [weather, setWeather] = useState("");
+  const [location, setLocation] = useState("");
+  // ------------ get location
+  useEffect(() => {
+    const test = position => {
+      let coordinates = [position.coords.latitude, position.coords.longitude];
+      setLocation(coordinates);
+    };
+    const locationDenied = () => {
+      alert("wwe cant show you weather without fuckin location");
+    };
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(test, locationDenied);
+    }
+  }, []);
+  // --------- get weather data
+  useEffect(() => {
+    let lat = location[0];
 
+    let lon = location[1];
+    //check if we got user location already
+    if (lon != null) {
+      let fetchUrl = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=fb07eaf11827eeea3aa08590b2e3c341&units=metric`;
+      fetch(fetchUrl)
+        .then(response => {
+          return response.json();
+        })
+        .then(data => {
+          //console.log(data);
+          setWeather(data);
+        });
+    }
+  }, [location]);
+
+  //------------------------
   const handleShowForm = () => {
     setLinksForm({ show: true });
   };
@@ -83,7 +117,7 @@ function App() {
     <>
       <Logo />
       <SearchForm />
-      <Weather />
+      <Weather weatherApi={weather} />
       <Links
         links={links}
         onShowForm={handleShowForm}
