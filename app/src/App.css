@@ -241,3 +241,53 @@ form:hover + .duckduckgo-logo {
 .icon:hover {
   color: var(--main-text);
 }
+
+/* -----------------Weather------------------*/
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  margin: auto;
+  width: 18rem;
+  padding: 1rem;
+  border-radius: 5rem;
+  color: var(--main-darker);
+  background-color: rgba(0, 55, 69, 0.3);
+}
+
+.weather-icon {
+  width: 4rem;
+  height: auto;
+}
+.weather-temp {
+  font-size: 2rem;
+  font-weight: 900;
+}
+.temp-feels {
+  font-size: 1.4rem !important;
+  font-weight: 600 !important;
+}
+.weather-additional {
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  justify-content: space-between;
+}
+.weather-additional-span {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.weather-location {
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: row;
+}

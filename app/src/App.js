@@ -117,7 +117,7 @@ function App() {
     <>
       <Logo />
       <SearchForm />
-      <Weather weatherApi={weather} />
+
       <Links
         links={links}
         onShowForm={handleShowForm}
@@ -135,6 +135,7 @@ function App() {
           edit={edit}
         />
       )}
+      <Weather weatherApi={weather} />
     </>
   );
 }
