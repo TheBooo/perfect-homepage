@@ -14,8 +14,8 @@ const initialLinks = [
   {
     id: uuidv4(),
     url: "https://hh.ru/",
-    name: "HeadHunter"
-  }
+    name: "HeadHunter",
+  },
 ];
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
   const [location, setLocation] = useState("");
   // ------------ get location
   useEffect(() => {
-    const test = position => {
+    const test = (position) => {
       let coordinates = [position.coords.latitude, position.coords.longitude];
       setLocation(coordinates);
     };
@@ -46,7 +46,7 @@ function App() {
 
     let lon = location[1];
     //check if we got user location already
-    if (lon != null) {
+    /*if (lon != null) {
       let fetchUrl = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=fb07eaf11827eeea3aa08590b2e3c341&units=metric`;
       fetch(fetchUrl)
         .then(response => {
@@ -56,7 +56,7 @@ function App() {
           //console.log(data);
           setWeather(data);
         });
-    }
+    }*/
   }, [location]);
 
   //------------------------
@@ -65,18 +65,18 @@ function App() {
   };
 
   //get input link URL
-  const handleUrl = e => {
+  const handleUrl = (e) => {
     setUrl(e.target.value);
   };
   //get input link name
-  const handleName = e => {
+  const handleName = (e) => {
     setName(e.target.value);
   };
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (url && name) {
       if (edit) {
-        let tempLinks = links.map(link => {
+        let tempLinks = links.map((link) => {
           return link.id === id ? { ...link, url, name } : link;
         });
         setLinks(tempLinks);
@@ -93,19 +93,19 @@ function App() {
       alert("Please enter URL and Name!");
     }
   };
-  const handleClose = e => {
+  const handleClose = (e) => {
     e.preventDefault();
     setLinksForm({ show: false });
   };
 
   // DELETE LINK
-  const handleDelete = id => {
-    let newLinks = links.filter(link => link.id !== id);
+  const handleDelete = (id) => {
+    let newLinks = links.filter((link) => link.id !== id);
     setLinks(newLinks);
   };
   // edit link
-  const handleEdit = id => {
-    let currentLink = links.filter(link => link.id === id);
+  const handleEdit = (id) => {
+    let currentLink = links.filter((link) => link.id === id);
     setUrl(currentLink[0].url);
     setName(currentLink[0].name);
     setEdit(true);

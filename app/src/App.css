@@ -291,3 +291,9 @@ form:hover + .duckduckgo-logo {
   display: flex;
   flex-direction: row;
 }
+.loading-icon {
+  display: block;
+  height: 24px;
+  width: auto;
+  animation: App-logo-spin infinite 2s ease-in-out;
+}

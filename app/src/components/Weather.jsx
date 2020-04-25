@@ -1,6 +1,7 @@
 import React from "react";
 import { MdLocationOn } from "react-icons/md";
 import { WiHumidity, WiStrongWind } from "react-icons/wi";
+import { AiOutlineReload } from "react-icons/ai";
 
 const Weather = ({ weatherApi }) => {
   const { weather, main, wind, name } = weatherApi;
@@ -35,7 +36,11 @@ const Weather = ({ weatherApi }) => {
       </div>
     );
   } else {
-    return <div className="weather-container">waiting...</div>;
+    return (
+      <div className="weather-container">
+        <AiOutlineReload className="loading-icon" />
+      </div>
+    );
   }
 };
 
