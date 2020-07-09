@@ -5,3 +5,5 @@
 
 Simple homepage for PC with shortcuts, DuckDuckGo search and weather widget (accuweather API).
 
+Открыть - [https://thebooo.github.io/perfect-homepage/](https://thebooo.github.io/perfect-homepage/)
+
